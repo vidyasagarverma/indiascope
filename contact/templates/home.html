@@ -1,0 +1,219 @@
+
+</html>{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiaScope | AI Video Generation</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        /* Additional styles for demo purposes */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #2e2e2e 3px solid;
+        }
+        header a.logo {
+            text-decoration: none;
+            color: #fff;
+            font-size: 2em;
+        }
+        header nav ul {
+            margin: 0;
+            padding: 0;
+            float: right;
+            margin-right: 20px;
+        }
+        header nav ul li {
+            display: inline;
+            list-style-type: none;
+            margin-left: 20px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.4em;
+        }
+        header nav ul li a:hover {
+            color: #ccc;
+        }
+        .btn {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #5d5d5d;
+        }
+        section {
+            padding: 20px 0;
+            clear: both;
+        }
+        h2 {
+            font-size: 2.8em;
+            line-height: 1.2em;
+            color: #333;
+        }
+        h3 {
+            font-size: 2em;
+            line-height: 1.2em;
+            color: #333;
+        }
+        p {
+            font-size: 1.6em;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 1.4em;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.6em;
+        }
+        textarea {
+            height: 150px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        footer nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        footer nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+        footer nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer nav ul li a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="#hero" class="logo"><img src="{% static 'logo.png' %}" width="30%" alt="IndiaScope Logo"></a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Transforming Ideas into Dynamic Videos with AI</h2>
+            <a href="#services" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h3>Key Features</h3>
+            <ul>
+                <li>AI-powered video generation</li>
+                <li>Customizable templates</li>
+                <li>High-definition output</li>
+                <li>Fast turnaround time</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have a question or want to discuss a project? Fill out the form below to get in touch with us.</p>
+            <form action="#" method="post",>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+                {% if messages %}
+                <div class="alert alert-success">
+                    {% for message in messages %}
+                         {{message}}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </form>
+
+        </div>
+    </section>
+
+
+
+    <!-- Scripts for smooth scrolling and other functionalities -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if( target.length ) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+        });
+    </script>
+
+</body>
+</html>
