@@ -1,2 +1,0 @@
-# indiascope
-indiascopedummywebsite
