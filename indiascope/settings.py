@@ -129,5 +129,5 @@ EMAIL_PORT = 587  # Use 465 for SSL, or 80 or 3535 for non-SSL
 EMAIL_USE_TLS = True  # GoDaddy uses SSL, not TLS
 EMAIL_USE_SSL = False  # Use SSL for secure connection
 EMAIL_HOST_USER = 'info@indiascope.com'  # Your full GoDaddy email address
-EMAIL_HOST_PASSWORD = 'Rolex@123'  # Your GoDaddy email account password
+EMAIL_HOST_PASSWORD = 'Rol'  # Your GoDaddy email account password
 DEFAULT_FROM_EMAIL = 'info@indiascope.com'  # Your default from email address
